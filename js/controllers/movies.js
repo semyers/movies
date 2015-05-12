@@ -3,6 +3,6 @@ App.MoviesController = Ember.ArrayController.extend({
   filteredMovies: function() {
     return this.get('model').filter(function(movie) {
       return movie.get('title').toLowerCase().indexOf(this.get('filter').toLowerCase()) > -1;
-    }, this);
+    }, this).sortBy('releaseDate').reverse();
   }.property('filter')
 });

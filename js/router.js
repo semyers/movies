@@ -28,9 +28,8 @@ App.MoviesRoute = Ember.Route.extend({
     return this.store.find('movie');
   },
   afterModel: function(movies, transition) {
-    if (movies.get('length') > 0) {
-      this.transitionTo('movie', movies.get('firstObject').id);
-    }
+    movies = movies.sortBy('releaseDate').reverse();
+    this.transitionTo('movie', movies.get('firstObject').id);
   }
 });
 
