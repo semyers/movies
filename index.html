@@ -64,12 +64,12 @@
                         <a href='http://movies.disney.com/inside-out' target='_blank'><img {{bind-attr src=view.posterSrc}}></a>
                     </div>
 
-                    <a class="badge-switch-left" href="#">
+                    {{#link-to "movie" view.prevMovie classNames="badge-switch-left"}}
                         <i class="fa fa-chevron-left"></i>
-                    </a>
-                    <a class="badge-switch-right" href="#">
+                    {{/link-to}}
+                    {{#link-to "movie" view.nextMovie classNames="badge-switch-right"}}
                         <i class="fa fa-chevron-right"></i>
-                    </a>
+                    {{/link-to}}
 
                 </div>
             </div>
@@ -84,6 +84,7 @@
         <script src="js/router.js"></script>
         <script src="js/models/movie.js"></script>
         <script src="js/views/movie.js"></script>
+        <script src="js/controllers/movie.js"></script>
         <script src="js/serializers/application.js"></script>
     </body>
 </html>
