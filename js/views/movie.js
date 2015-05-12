@@ -21,6 +21,13 @@ App.MovieView = Ember.View.extend({
       nextMovieIndex = 0;
     }
     return movies.objectAt(nextMovieIndex);
-  }.property('controller.model', 'controller.controllers.movies.model')
+  }.property('controller.model', 'controller.controllers.movies.model'),
+  updateBackdrop: function() {
+    var backdropSrc = 'https://image.tmdb.org/t/p/w1280/' + this.get('controller.model.backdropPath');
+    $('.detailOuter').css('background-image', 'url(' + backdropSrc + ')');
+  }.observes('controller.model.backdropPath'),
+  didInsertElement: function() {
+    this.updateBackdrop();
+  }
 });
 
