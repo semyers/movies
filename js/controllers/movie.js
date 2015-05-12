@@ -1,3 +1,3 @@
 App.MovieController = Ember.ObjectController.extend({
-  needs: ['movies']
+  needs: ['application', 'movies']
 });

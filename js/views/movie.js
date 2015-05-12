@@ -1,6 +1,7 @@
 App.MovieView = Ember.View.extend({
+  imgBase: Ember.computed.alias('controller.controllers.application.config.images.secure_base_url'),
   posterSrc: function() {
-    return 'https://image.tmdb.org/t/p/w185/' + this.get('controller.model.posterPath');
+    return this.get('imgBase') + 'w185/' + this.get('controller.model.posterPath');
   }.property('controller.model.posterPath'),
   prevMovie: function() {
     var movie = this.get('controller.model'),
@@ -23,7 +24,7 @@ App.MovieView = Ember.View.extend({
     return movies.objectAt(nextMovieIndex);
   }.property('controller.model', 'controller.controllers.movies.model'),
   updateBackdrop: function() {
-    var backdropSrc = 'https://image.tmdb.org/t/p/w1280/' + this.get('controller.model.backdropPath');
+    var backdropSrc = this.get('imgBase') + 'w1280/' + this.get('controller.model.backdropPath');
     $('.detailOuter').css('background-image', 'url(' + backdropSrc + ')');
   }.observes('controller.model.backdropPath'),
   didInsertElement: function() {
