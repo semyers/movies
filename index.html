@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Pixar Project</title>
+
+        <!-- pulling in font-awesome for the left/right chevron icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="project.css">
+
+    </head>
+
+    <body>
+        <!--
+        The details are currently hard coded. Please make this dynamic based on the table row selected.
+        -->
+
+        <script type="text/x-handlebars" data-template-name="todos">
+
+            <div id="detailOuter" class='detailOuter'>
+                <div class='detailBox'>
+                    <div class='detailText'>
+                        <div class='detailTitle'>Inside Out</div>
+                        <div class='detailField'>
+                            <div class='detailLabel'>Tagline:</div>
+                            <div class='detailContent'>Meet the little voices inside your head.</div>
+                        </div>
+                        <div class='detailField'>
+                            <div class='detailLabel'>Release Date:</div>
+                            <div class='detailContent'>June 19, 2015</div>
+                        </div>
+                        <div class='detailField'>
+                            <div class='detailLabel'>Companies:</div>
+                            <div class='detailContent'>Walt Disney Pictures, Pixar Animation Studios</div>
+                        </div>
+                        <div class='detailOverview'>
+                            A film told from the perspective of the emotions inside the mind of a little girl.
+                        </div>
+                        <div class='detailHomepage'>
+                            <a href='http://movies.disney.com/inside-out' target='_blank'>http://movies.disney.com/inside-out</a>
+                        </div>
+                    </div>
+
+                    <div class='detailPoster'>
+                        <a href='http://movies.disney.com/inside-out' target='_blank'><img src='https://image.tmdb.org/t/p/w185/rDycdoAXtBb7hoWlBpZqbwk2F44.jpg'></a>
+                    </div>
+
+                    <a class="badge-switch-left" href="#">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                    <a class="badge-switch-right" href="#">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <div id="tableOuter" class='tableOuter'>
+                Please add the table data here as described in the included design.png
+            </div>
+
+        </script>
+
+        <script src="js/libs/jquery-1.11.2.min.js"></script>
+        <script src="js/libs/handlebars-v1.3.0.js"></script>
+        <script src="js/libs/ember.js"></script>
+        <script src="js/libs/ember-data.js"></script>
+        <script src="js/application.js"></script>
+        <script src="js/adapter.js"></script>
+        <script src="js/router.js"></script>
+        <script src="js/models/movie.js"></script>
+        <script src="js/serializers/application.js"></script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+body {
+    margin: 0px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+.detailOuter {
+    background-color: #f2f2f2;
+    padding: 25px;
+    border-bottom: 1px solid #ccc;
+    background: url(https://image.tmdb.org/t/p/w1280/8fW3GPYTFUCutgfh77LbGbw3yQI.jpg) 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.detailBox {
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border:1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    position: relative;
+}
+.badge-switch-left {
+    position: absolute;
+    left: -43px;
+    top: 148px;
+}
+.badge-switch-right {
+    position: absolute;
+    right: -45px;
+    top: 148px;
+}
+.badge-switch-left, .badge-switch-right {
+    font-size: 45px;
+    color: #ccc;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #000;
+}
+.detailPoster {
+    border: 1px solid #888;
+}
+.detailPoster:hover {
+    cursor:pointer;
+    border-color: #ff7f11;
+}
+.detailOverview {
+    padding-top: 20px;
+}
+.detailField {
+    font-size:12px;
+    margin-top:2px;
+}
+.detailLabel {
+    width:115px;
+    font-weight: bold;
+    display: inline-block;
+}
+.detailContent {
+    display: inline-block;
+}
+.detailText {
+    width: 460px;
+    vertical-align: top;
+    padding: 20px;
+}
+.detailTitle {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+.detailHomepage  {
+    font-size:11px;
+    margin-top:15px;
+}
+.detailHomepage a {
+    color: #ff8b30;
+}
+.detailHomepage a:hover {
+    color: #ff7500;
+}
+.detailHomepage:hover {
+
+}
+.detailText, .detailPoster {
+    display:inline-block;
+}
+
+.tableOuter {
+    font-style: italic;
+    color: #ccc;
+    text-align: center;
+    width:100%;
+    padding-top: 60px;
+}
