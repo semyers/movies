@@ -9,3 +9,9 @@ App.MoviesRoute = Ember.Route.extend({
     return this.store.find('movie');
   }
 });
+
+App.MovieRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.fetchById('movie', params.movie_id);
+  }
+});
