@@ -10,31 +10,6 @@
     </head>
 
     <body>
-        <!--
-        The details are currently hard coded. Please make this dynamic based on the table row selected.
-        -->
-
-        <script type="text/x-handlebars" data-template-name="movies">
-
-            {{outlet}}
-
-            <div id="tableOuter" class='tableOuter'>
-                <table>
-                    <tr>
-                        <th>Title</th>
-                        <th>Release Date</th>
-                    </tr>
-                    {{#each movie in model}}
-                        <tr>
-                            <td>{{#link-to "movie" movie}}{{movie.title}}{{/link-to}}</td>
-                            <td>{{movie.releaseDate}}</td>
-                        </tr>
-                    {{/each}}
-                </table>
-            </div>
-
-        </script>
-
         <script type="text/x-handlebars" data-template-name="movie">
             <div id="detailOuter" class='detailOuter'>
                 <div class='detailBox'>
@@ -50,29 +25,50 @@
                         </div>
                         <div class='detailField'>
                             <div class='detailLabel'>Companies:</div>
-                            <div class='detailContent'>Walt Disney Pictures, Pixar Animation Studios</div>
+                            <div class='detailContent'>{{productionCompanies}}</div>
                         </div>
                         <div class='detailOverview'>
                             {{overview}}
                         </div>
                         <div class='detailHomepage'>
-                            <a href='http://movies.disney.com/inside-out' target='_blank'>http://movies.disney.com/inside-out</a>
+                            <a {{bind-attr href=homepage}} target='_blank'>{{homepage}}</a>
                         </div>
                     </div>
 
                     <div class='detailPoster'>
-                        <a href='http://movies.disney.com/inside-out' target='_blank'><img {{bind-attr src=view.posterSrc}}></a>
+                        <a {{bind-attr href=homepage}} target='_blank'><img {{bind-attr src=view.posterSrc}}></a>
                     </div>
 
-                    {{#link-to "movie" view.prevMovie classNames="badge-switch-left"}}
+                    {{#link-to "movie" view.prevMovie.id classNames="badge-switch-left"}}
                         <i class="fa fa-chevron-left"></i>
                     {{/link-to}}
-                    {{#link-to "movie" view.nextMovie classNames="badge-switch-right"}}
+                    {{#link-to "movie" view.nextMovie.id classNames="badge-switch-right"}}
                         <i class="fa fa-chevron-right"></i>
                     {{/link-to}}
 
                 </div>
             </div>
+        </script>
+
+        <script type="text/x-handlebars" data-template-name="movies">
+
+            {{outlet}}
+
+            <div id="tableOuter" class='tableOuter'>
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Release Date</th>
+                    </tr>
+                    {{#each movie in model}}
+                    <tr>
+                        <td>{{#link-to "movie" movie.id}}{{movie.title}}{{/link-to}}</td>
+                        <td>{{movie.releaseDate}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+
         </script>
 
         <script src="js/libs/jquery-1.11.2.min.js"></script>

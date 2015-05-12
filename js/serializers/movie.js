@@ -18,6 +18,7 @@ App.MovieSerializer = DS.RESTSerializer.extend({
   },
   extractSingle: function(store, typeClass, payload, id) {
     payload.id = id;
+    payload.production_companies = payload.production_companies.mapBy('name').join(', ');
     payload = {movie: payload};
     return this._super(store, typeClass, payload, id);
   },
