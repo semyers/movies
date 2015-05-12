@@ -5,7 +5,7 @@ App.Router.map(function() {
 });
 
 App.ApplicationRoute = Ember.Route.extend({
-  beforeModel: function (transition) {
+  beforeModel: function(transition) {
     var controller = this.controllerFor('application');
     if (!controller.get('config')) {
       transition.abort();
@@ -26,6 +26,11 @@ App.ApplicationRoute = Ember.Route.extend({
 App.MoviesRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('movie');
+  },
+  afterModel: function(movies, transition) {
+    if (movies.get('length') > 0) {
+      this.transitionTo('movie', movies.get('firstObject'));
+    }
   }
 });
 
