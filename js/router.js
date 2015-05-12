@@ -29,7 +29,7 @@ App.MoviesRoute = Ember.Route.extend({
   },
   afterModel: function(movies, transition) {
     if (movies.get('length') > 0) {
-      this.transitionTo('movie', movies.get('firstObject'));
+      this.transitionTo('movie', movies.get('firstObject').id);
     }
   }
 });

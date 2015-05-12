@@ -55,12 +55,13 @@
             {{outlet}}
 
             <div class='tableOuter'>
+                {{input class="searchBox" type="text" placeholder="Filter" value=filter }}
                 <table>
                     <tr>
                         <th>Title</th>
                         <th>Release Date</th>
                     </tr>
-                    {{#each movie in model}}
+                    {{#each movie in filteredMovies}}
                     <tr>
                         <td>{{#link-to "movie" movie.id}}{{movie.title}}{{/link-to}}</td>
                         <td>{{formatDate movie.releaseDate}}</td>
@@ -84,6 +85,7 @@
         <script src="js/views/movie.js"></script>
         <script src="js/controllers/application.js"></script>
         <script src="js/controllers/movie.js"></script>
+        <script src="js/controllers/movies.js"></script>
         <script src="js/serializers/movie.js"></script>
         <script src="js/helpers/format-date.js"></script>
     </body>

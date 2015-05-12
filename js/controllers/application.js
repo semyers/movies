@@ -1,3 +1,3 @@
-App.ApplicationController = Ember.ObjectController.extend({
+App.ApplicationController = Ember.Controller.extend({
   config: null
 });
