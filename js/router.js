@@ -1,5 +1,7 @@
 App.Router.map(function() {
-  this.resource('movies', { path: '/' });
+  this.resource('movies', {path: '/'}, function() {
+    this.resource('movie', {path: '/:movie_id'});
+  });
 });
 
 App.MoviesRoute = Ember.Route.extend({
